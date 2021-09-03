@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import ProductCategory, Product
 
 
 def main(request):
@@ -6,7 +7,12 @@ def main(request):
 
 
 def products(request):
-    return render(request, 'mainapp/products.html')
+    title = 'Товары'
+    product = Product.objects.all()
+
+    content = {'title': title, 'products': product}
+
+    return render(request, 'mainapp/products.html', content)
 
 
 def contact(request):

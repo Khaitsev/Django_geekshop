@@ -77,33 +77,22 @@
                     <a class="explore" href="#">показать все <img src="{% static 'img/arrow.png' %}" alt=""></a>
                 </div>
                 <div class="related-products clearfix">
-                    <div class="block">
-                        <a href="#"><img src="{% static 'img/product-11.jpg' %}" alt="">
-                            <div class="text">
-                                <img src="{% static 'img/icon-hover.png' %}" alt="img">
-                                <h4>Стул повышенного качества</h4>
-                                <p>Не оторваться. </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="block">
-                        <a href="#"><img src="{% static 'img/product-21.jpg' %}" alt="">
-                            <div class="text">
-                                <img src="{% static 'img/icon-hover.png' %}" alt="img">
-                                <h4>Стул повышенного качества</h4>
-                                <p>Не оторваться. </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="block">
-                        <a href="#"><img src="{% static 'img/product-31.jpg' %}" alt="">
-                            <div class="text">
-                                <img src="{% static 'img/icon-hover.png' %}" alt="img">
-                                <h4>Стул повышенного качества</h4>
-                                <p>Не оторваться. </p>
-                            </div>
-                        </a>
-                    </div>
+
+
+                    {% for pr in products %}
+
+                        <div class="block">
+                            <a href="#"><img src=" /media/{{ pr.image }}" alt="{{ pr.short_desc }}">
+                                <div class="text">
+                                    <img src="/media/products_images/icon-hover.png" alt="img">
+                                    <h4>{{ pr.short_desc }}</h4>
+                                    <p> {{ pr.category }} </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    {% endfor %}
+
 
                 </div>
             </div>
@@ -113,3 +102,4 @@
 
     </div>
 {% endblock %}
+
