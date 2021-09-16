@@ -6,7 +6,7 @@ def main(request):
     return render(request, 'mainapp/index.html')
 
 
-def products(request):
+def products(request, pk=None):
     title = 'Товары'
     product = Product.objects.all()
 

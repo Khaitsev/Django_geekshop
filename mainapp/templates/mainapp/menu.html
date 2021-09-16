@@ -1,6 +1,21 @@
 <a href={% url 'main' %} class="logo"></a>
+
 <ul class="menu">
-    <li><a href="{% url 'main' %}">домой</a></li>
-    <li><a href="{% url 'products' %}">продукты</a></li>
-    <li><a href="{% url 'contact' %}" class="active">контакты</a></li>
+    <li><a class="nav-link" href="{% url 'main' %}">домой</a></li>
+    <li><a class="nav-link" href="{% url 'mainapp:index' %}">продукты</a></li>
+    <li><a class="nav-link" href="{% url 'contact' %}" >контакты</a></li>
+    {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'auth:profile' %}">{{ user.first_name }} <i
+                    class="fas fa-user-circle"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'auth:logout' %}">Выйти <i class="fas fa-sign-out-alt"></i></a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'auth:login' %}">Войти <i class="fas fa-sign-in-alt"></i></a>
+        </li>
+    {% endif %}
+
 </ul>

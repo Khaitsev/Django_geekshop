@@ -7,10 +7,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', mainapp.products, name='products'),
+    path('products/', include('mainapp.urls', namespace='products')),
     path('contact/', mainapp.contact, name='contact'),
     path('', mainapp.main, name='main'),
-    path('auth/', include('authapp.urls', namespace='auth'))
+    path('auth/', include('authapp.urls', namespace='auth')),
+    path('baskets/', include('basketapp.urls', namespace='baskets'))
 ]
 
 if settings.DEBUG:
