@@ -1,4 +1,4 @@
-<a href={% url 'main' %} class="logo"></a>
+<a href='{% url 'main' %}' class="logo"></a>
 
 <ul class="menu">
     <li><a class="nav-link" href="{% url 'main' %}">домой</a></li>
@@ -6,8 +6,8 @@
     <li><a class="nav-link" href="{% url 'contact' %}" >контакты</a></li>
     {% if user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'auth:profile' %}">{{ user.first_name }} <i
-                    class="fas fa-user-circle"></i></a>
+            <a class="nav-link" href="{% url 'auth:profile' %}">{{ user.first_name }}
+            <i class="far fa-user"></i></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'auth:logout' %}">Выйти <i class="fas fa-sign-out-alt"></i></a>
