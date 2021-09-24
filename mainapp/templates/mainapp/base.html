@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,14 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+
     <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
     {% block js %}
     {% endblock %}
 
 </head>
 <body>
+
 
 
 {% block body %}
@@ -51,6 +53,13 @@
         <p class="small">Положения &amp; Условия / Конфиденциальность &amp; Cookies</p>
     </div>
 {% endblock %}
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Basket -->
+<script src="{% static 'js/basket.js' %}"></script>
 
 </body>
 </html>
